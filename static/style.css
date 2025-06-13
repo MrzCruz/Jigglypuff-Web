@@ -1,0 +1,90 @@
+:root {
+  --bg-clr: #f2f2f2;
+  --text-clr: #000;
+}
+
+.dark {
+  --bg-clr: #121212;
+  --text-clr: #fff;
+}
+
+body {
+  background: var(--bg-clr);
+  color: var(--text-clr);
+  font-family: sans-serif;
+  margin: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form container centers content */
+#formContainer {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Form layout with input + button inline */
+#queryForm {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  flex-wrap: wrap; /* Stack on smaller screens */
+}
+
+/* Search input */
+#queryInput {
+  flex: 1;
+  min-width: 0;
+  height: 3rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Submit button */
+#submitBtn {
+  height: 3rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Dropdown container (initially hidden) */
+#suggestionBox {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Dropdown styling */
+#dropDown {
+  width: 100%;
+  max-height: 40vh;
+  padding: 0.5em;
+  font-size: 1rem;
+  background: var(--bg-clr);
+  color: var(--text-clr);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Audio container */
+#audioContainer {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Audio player */
+#audioPlayer {
+  width: 100%;
+}
