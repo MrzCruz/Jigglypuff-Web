@@ -1,6 +1,8 @@
 # 🎵 Jigglypuff: Web
 
-Jigglypuff: Web is a lightweight, browser-based YouTube audio player built with Flask, JavaScript, and `yt_dlp`. Once running, it can be accessed from **any device on the same Wi-Fi/network**, making it a perfect personal streaming server. It features a minimal UI, live search suggestions, audio queue management, theme switching (light/dark), and persistent playback using `localStorage`.
+Jigglypuff: Web is a lightweight, browser-based YouTube audio player built with Flask, JavaScript, and `yt_dlp`.
+Once running, it can be accessed from **any device on the same Wi-Fi/network**, making it a perfect personal streaming server.
+It features a minimal UI, live search suggestions, audio queue management, theme switching (light/dark), and persistent playback using `localStorage`.
 
 ---
 
@@ -13,6 +15,7 @@ Jigglypuff: Web is a lightweight, browser-based YouTube audio player built with 
 - 🌘 Dark/Light theme toggle with `localStorage`
 - 💾 Queue and current song saved between sessions
 - 🧠 Media Session API integration for system media controls
+- 📡 Access your personal music server from any device on the same Wi-Fi network
 
 ---
 
