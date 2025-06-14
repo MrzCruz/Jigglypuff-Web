@@ -1,30 +1,104 @@
-from flask import Flask, render_template, jsonify, request
-from yt import *
+# 🎵 Jigglypuff: Web
 
-app = Flask(__name__)
+Jigglypuff: Web is a lightweight, browser-based YouTube audio player built with Flask, JavaScript, and `yt_dlp`. Once running, it can be accessed from **any device on the same Wi-Fi/network**, making it a perfect personal streaming server. It features a minimal UI, live search suggestions, audio queue management, theme switching (light/dark), and persistent playback using `localStorage`.
 
-@app.route('/')
-def home():
-  return render_template('index.html')
-  
-@app.route('/search', methods=['GET'])
-def search():
-  try:
-    query = request.args.get('q')
-    searchInfo = topResult(query)
-    if not searchInfo or searchInfo == '':
-      print('Error from yt.py')
-    return jsonify(searchInfo)
-  except Exception as e:
-    return jsonify({'error': str(e)}), 500
+---
 
-@app.route('/search', methods=["POST"])
-def searchURL():
-  data = request.get_json()
-  query = data.get("query", "").strip()
-  if not query or query == 0 :
-    return jsonify([])
-  return jsonify(getStreamUrl(query))
-  
-if __name__ == '__main__':
-  app.run(host='0.0.0.0', port =5000, debug=False)
+## 🚀 Features
+
+- 🔍 Live YouTube search with suggestions
+- 🎧 Audio streaming using `yt_dlp`
+- 📜 Song queue with next/previous controls
+- ♻️ Loop, seek, skip, and autoplay support
+- 🌘 Dark/Light theme toggle with `localStorage`
+- 💾 Queue and current song saved between sessions
+- 🧠 Media Session API integration for system media controls
+
+---
+
+## 📁 Project Structure
+
+```
+Jigglypuff-Web/
+├── server.py          # Flask backend entry point
+├── yt.py              # YouTube search & stream URL logic via yt_dlp
+├── templates/
+│   └── index.html     # Main HTML UI
+├── static/
+│   ├── script.js      # All frontend logic (player, queue, search, etc.)
+│   └── style.css      # Custom responsive and themed styles
+```
+
+---
+
+## 🛠️ Installation
+
+### Requirements:
+- Python 3.7+
+- `yt_dlp`
+- `Flask`
+
+### 🔧 Install dependencies:
+
+```bash
+pip install flask yt_dlp
+```
+
+---
+
+## 🧪 How to Run
+
+1. Clone the repo:
+```bash
+git clone https://github.com/MrzCruz/Jigglypuff-Web.git
+cd Jigglypuff-Web
+```
+
+2. Start the Flask server:
+```bash
+python server.py
+```
+
+3. Open your browser and visit:
+```
+http://localhost:5000/
+```
+
+---
+
+## 💡 Usage
+
+- Use the search bar to find a song (e.g., `Imagine Dragons`)
+- Click the suggested result or press Enter to queue it
+- Use the player controls at the bottom to play/pause/skip
+- The queue is saved in `localStorage`, so your session is remembered
+- Use the 🌓 toggle button to switch themes
+
+---
+
+## 📦 Tech Stack
+
+- **Backend**: Flask, Python, `yt_dlp`
+- **Frontend**: HTML5, Vanilla JS, CSS3
+- **Other**: Media Session API, LocalStorage
+
+---
+
+## 📌 TODO / Roadmap
+
+- [ ] Volume control slider
+- [ ] Drag-and-drop queue reorder
+- [ ] Mobile layout refinements
+- [ ] Search suggestions from multiple sources (e.g. playlists, history)
+
+---
+
+## ⚖️ License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## ✨ Author
+
+Made with ❤️ by [MrzCruz](https://github.com/MrzCruz)
