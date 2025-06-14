@@ -74,6 +74,59 @@ http://localhost:5000/
 
 ---
 
+## 📱 Termux Installation Guide (Android)
+
+Want to run this on your Android phone using Termux? Follow these simple steps to set it up:
+
+### 📥 1. Install Termux (Safe APK)
+
+Download the **latest working APK** of Termux:
+- 👉 [Download Termux 118 APK](https://github.com/AndronixApp/termux-releases/blob/main/Releases/Termux_118/com.termux_118.apk?raw=true)
+
+After installation, open the Termux app.
+
+### 🧰 2. Update Termux and Install Packages
+
+Run these commands inside Termux to update and install the required tools:
+
+```bash
+pkg update -y && pkg upgrade -y
+pkg install -y python git clang libffi openssl
+pkg clean
+```
+
+### 🐍 3. Install Python Dependencies
+
+```bash
+pip install flask yt_dlp
+```
+
+If `yt_dlp` fails, update it:
+```bash
+pip install -U yt-dlp
+```
+
+### 🔁 4. Clone and Run the Project
+
+```bash
+git clone https://github.com/MrzCruz/Jigglypuff-Web.git
+cd Jigglypuff-Web
+python server.py
+```
+
+Then open your phone browser or any other device on the same Wi-Fi and visit:
+
+```
+http://localhost:5000/
+```
+
+Or use your phone’s local IP:
+```
+http://192.168.0.x:5000/
+```
+
+---
+
 ## 💡 Usage
 
 - Use the search bar to find a song (e.g., `Imagine Dragons`)
