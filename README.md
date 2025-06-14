@@ -1,5 +1,10 @@
 # 🎵 Jigglypuff: Web
 
+![Python](https://img.shields.io/badge/Python-3.7%2B-blue?logo=python)
+![Flask](https://img.shields.io/badge/Backend-Flask-lightgrey?logo=flask)
+![yt_dlp](https://img.shields.io/badge/YouTube-yt__dlp-red?logo=youtube)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 Jigglypuff: Web is a lightweight, browser-based YouTube audio player built with Flask, JavaScript, and `yt_dlp`.
 Once running, it can be accessed from **any device on the same Wi-Fi/network**, making it a perfect personal streaming server.
 It features a minimal UI, live search suggestions, audio queue management, theme switching (light/dark), and persistent playback using `localStorage`.
