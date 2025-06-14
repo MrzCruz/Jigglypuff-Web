@@ -91,7 +91,7 @@ Run these commands inside Termux to update and install the required tools:
 
 ```bash
 pkg update -y && pkg upgrade -y
-pkg install -y python git clang libffi openssl
+pkg install -y python git
 pkg clean
 ```
 
